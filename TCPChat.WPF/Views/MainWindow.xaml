@@ -1,0 +1,46 @@
+﻿<Window x:Class="TCPChat.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCPChat.WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        xmlns:VM="clr-namespace:TCPChat.Shared.ViewModels;assembly=TCPChat.Shared"
+        d:DataContext="{d:DesignInstance Type={x:Type VM:MainWindowViewModel},IsDesignTimeCreatable=True}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Введите IP Адрес:"/>
+                <TextBox Text="{Binding IPAddressText,
+                    UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox Content="Запустить как сервер"
+                          IsChecked="{Binding IsServer,
+                    UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Content="{Binding ConnectButtonContent}"
+                        Command="{Binding ConnectButtonCommand}"
+                        IsEnabled="{Binding ConnectButtonIsEnabled}"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="{Binding ChatData,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Bottom"/>
+            <TextBox Grid.Row="1" Text="{Binding MessageData,
+                UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Row="2" Content="Отправить сообщение"
+                    Command="{Binding SendMessageCommand}"
+                    IsEnabled="{Binding SendMessageBtnIsEnabled}"/>
+        </Grid>
+    </Grid>
+</Window>
