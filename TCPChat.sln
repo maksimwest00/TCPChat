@@ -3,12 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPChat.WPF", "TCPChat.WPF\TCPChat.WPF.csproj", "{0AC8E67D-9A7A-4DA0-8232-91E7679432DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCPChat.WPF", "TCPChat.WPF\TCPChat.WPF.csproj", "{0AC8E67D-9A7A-4DA0-8232-91E7679432DC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C4297014-B525-4837-BC01-C508DCC9FC2B} = {C4297014-B525-4837-BC01-C508DCC9FC2B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPChat.Shared", "TCPChat.Shared\TCPChat.Shared.csproj", "{C4297014-B525-4837-BC01-C508DCC9FC2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TCPChat.Shared", "TCPChat.Shared\TCPChat.Shared.csproj", "{C4297014-B525-4837-BC01-C508DCC9FC2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPChat.GTK", "TCPChat.GTK\TCPChat.GTK.csproj", "{F39CE61A-A1D6-4776-B56B-33ED5F4825FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C4297014-B525-4837-BC01-C508DCC9FC2B} = {C4297014-B525-4837-BC01-C508DCC9FC2B}
+		{E04BFB7E-CA53-40F6-8592-D48F29CA386F} = {E04BFB7E-CA53-40F6-8592-D48F29CA386F}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GtkSharp.Mvvm", "..\GtkSharp.Mvvm\src\GtkSharp.Mvvm\GtkSharp.Mvvm.csproj", "{E04BFB7E-CA53-40F6-8592-D48F29CA386F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gtk", "Gtk", "{729AD3F7-A330-46B4-9BAE-781B5D2396BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,9 +34,21 @@ Global
 		{C4297014-B525-4837-BC01-C508DCC9FC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4297014-B525-4837-BC01-C508DCC9FC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4297014-B525-4837-BC01-C508DCC9FC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F39CE61A-A1D6-4776-B56B-33ED5F4825FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F39CE61A-A1D6-4776-B56B-33ED5F4825FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F39CE61A-A1D6-4776-B56B-33ED5F4825FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F39CE61A-A1D6-4776-B56B-33ED5F4825FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04BFB7E-CA53-40F6-8592-D48F29CA386F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04BFB7E-CA53-40F6-8592-D48F29CA386F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04BFB7E-CA53-40F6-8592-D48F29CA386F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04BFB7E-CA53-40F6-8592-D48F29CA386F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F39CE61A-A1D6-4776-B56B-33ED5F4825FD} = {729AD3F7-A330-46B4-9BAE-781B5D2396BB}
+		{E04BFB7E-CA53-40F6-8592-D48F29CA386F} = {729AD3F7-A330-46B4-9BAE-781B5D2396BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0285448-FD87-4511-B47C-7BFC794FBE01}
