@@ -12,12 +12,12 @@ namespace TCPChat.Shared
         public event EventHandler CanExecuteChanged
         {
             add
-            { 
-                _canExecuteChanged += value; 
+            {
+                _canExecuteChanged += value;
             }
-            remove 
-            { 
-                _canExecuteChanged -= value; 
+            remove
+            {
+                _canExecuteChanged -= value;
             }
         }
 
