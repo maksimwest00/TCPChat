@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:TCPChat.Avalonia.Views"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="TCPChat.Avalonia.Views.MainWindow"
+        Title="TCPChat.Avalonia"
+        Height="450"
+        Width="800"
+        MinHeight="135"
+        MinWidth="650"
+        WindowStartupLocation="CenterScreen"
+        xmlns:VM="using:TCPChat.Shared.ViewModels">
+
+  <Design.DataContext>
+    <VM:MainWindowViewModel/>
+  </Design.DataContext>
+
+  <Grid ColumnDefinitions="*,*">
+    <Grid Grid.Column="0">
+      <StackPanel VerticalAlignment="Center">
+        <TextBlock Text="Введите IP Адрес:"/>
+        <TextBox Text="{Binding IPAddressText}"/>
+        <CheckBox Content="Запустить как сервер"
+                  IsChecked="{Binding IsServer}"/>
+        <Button Content="{Binding ConnectButtonContent}"
+                Command="{Binding ConnectButtonCommand}"
+                IsEnabled="{Binding ConnectButtonIsEnabled}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"/>
+      </StackPanel>
+    </Grid>
+
+    <Grid Grid.Column="1" RowDefinitions="*,Auto,Auto">
+      <TextBlock Grid.Row="0" Text="{Binding ChatData}" VerticalAlignment="Bottom"/>
+      <TextBox Grid.Row="1" Text="{Binding MessageData}"/>
+      <Button Grid.Row="2" Content="Отправить сообщение"
+              Command="{Binding SendMessageCommand}"
+              IsEnabled="{Binding SendMessageBtnIsEnabled}"
+              HorizontalAlignment="Stretch"
+              HorizontalContentAlignment="Center"/>
+    </Grid>
+  </Grid>
+</Window>
