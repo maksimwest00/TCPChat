@@ -14,10 +14,10 @@
 
   <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.34" />
+    <PackageReference Include="GtkSharp.Mvvm" Version="0.1.1-alpha" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\GtkSharp.Mvvm\src\GtkSharp.Mvvm\GtkSharp.Mvvm.csproj" />
     <ProjectReference Include="..\TCPChat.Shared\TCPChat.Shared.csproj" />
   </ItemGroup>
 
